@@ -7,12 +7,6 @@ import requests
 response = requests.get("https://raw.githubusercontent.com/ChienShun-Liu/Cathay/main/input_json/test_1.json")
 test_data = response.json()
 
-# os.chdir('input_json')
-# import json
-# with open("test_1.json", mode="r", encoding="utf-8") as file:
-#     test_data = json.load(file)
-    
-# os.chdir('..')
 #%% Separate the test.json
 country      = test_data["鄉鎮市區"]
 trans_target = test_data["交易標的"]
