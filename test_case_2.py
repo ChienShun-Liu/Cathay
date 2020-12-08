@@ -4,15 +4,9 @@ import pandas as pd
 import requests
 
 #%% Import the test.json
-response = requests.get("https://raw.githubusercontent.com/ChienShun-Liu/Cathay/main/input_json/test_1.json")
+response = requests.get("https://raw.githubusercontent.com/ChienShun-Liu/Cathay/main/input_json/test_2.json")
 test_data = response.json()
 
-# os.chdir('input_json')
-# import json
-# with open("test_1.json", mode="r", encoding="utf-8") as file:
-#     test_data = json.load(file)
-    
-# os.chdir('..')
 #%% Separate the test.json
 country      = test_data["鄉鎮市區"]
 trans_target = test_data["交易標的"]
@@ -47,4 +41,4 @@ data = data.T
 tar_data = data[tar_ind]
 tar_data = pd.DataFrame(tar_data, columns=Column)
 #%% Save the target data as .csv
-tar_data.to_csv('test_1.csv',index=False, header=True,encoding='utf-8-sig') 
+tar_data.to_csv('test_2.csv',index=False, header=True,encoding='utf-8-sig') 
